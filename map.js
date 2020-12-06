@@ -1,11 +1,11 @@
 
 function map(arr, func) {
-    // skapa en ny tom array av samma längd som arr
 
-    // för varje element i arr
-    //      newArray[j] = func(arr[j])
-
-    // returnera den nya arrayen
+    const returnArray = new Array(arr.length)
+    for(i = 0; i < arr.length; i++) {
+        returnArray[i] = func(arr[i])
+    }
+return returnArray
 }
 
 // Test 1
@@ -24,3 +24,7 @@ console.log(stringArray)    // ['boll', 'häst', 'flygplan']
 
 // Test 3 - GÖR ETT EGET TEST HÄR
 console.log('\nTEST 3')
+const numberArray2 = [2, 3, 5, 8, 10]
+const newNumberArray2 = map(numberArray2, x => x % 2)
+console.log(newNumberArray2) // räknar rest av ett tal som delas på 2
+console.log(numberArray2)
